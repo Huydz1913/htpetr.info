@@ -542,3 +542,7 @@ body {
 .glowing {
   animation: rainbow 1s infinite;  /* Nhấp nháy với hiệu ứng cầu vồng */
 }
+.contact-info {
+  font-size: 18px;
+  padding: 15px;
+}
