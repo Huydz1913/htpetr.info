@@ -235,6 +235,22 @@
       }, 200);
     });
   </script>
+    const audio = document.getElementById('myAudio');  // Lấy phần tử âm thanh
+const body = document.body;  // Lấy phần thân trang
+
+audio.addEventListener('play', function() {
+  setInterval(function() {
+    const volume = audio.volume;  // Lấy mức độ âm thanh
+    if (audio.paused || audio.currentTime === 0) return;
+
+    // Nếu âm lượng lớn hơn một ngưỡng, bật hiệu ứng sáng
+    if (volume > 0.5) {
+      body.classList.add('glowing');  // Thêm class để thay đổi nền
+    } else {
+      body.classList.remove('glowing');  // Xóa class nếu âm lượng yếu
+    }
+  }, 100);
+});
 </body>
 </html>
 </html>
