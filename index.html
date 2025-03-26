@@ -307,6 +307,116 @@ audio.addEventListener('play', function() {
         }
       }, 100);
     });
+      <!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thời gian và Thời tiết ở Cộng hòa Séc</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-image: url('https://via.placeholder.com/60'); /* Đổi link ảnh đại diện ở đây */
+      background-size: cover;
+      margin-right: 20px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .time, .weather {
+      margin: 0;
+    }
+
+    .time {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .weather {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="avatar"></div> <!-- Ảnh đại diện -->
+    <div class="info">
+      <p class="time" id="time"></p> <!-- Hiển thị thời gian -->
+      <p class="weather" id="weather"></p> <!-- Hiển thị thời tiết -->
+    </div>
+  </div>
+
+  <script>
+    // Hàm định dạng thời gian
+    function formatTime(date) {
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      const seconds = String(date.getSeconds()).padStart(2, '0');
+      return ${hours}:${minutes}:${seconds};
+    }
+
+    // Hàm cập nhật thời gian
+    function updateTime() {
+      const options = {
+        timeZone: 'Europe/Prague',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      const time = new Date().toLocaleTimeString('vi-VN', options);
+      document.getElementById('time').textContent = time;
+    }
+
+    // Cập nhật thời gian mỗi giây
+    setInterval(updateTime, 1000);
+    updateTime(); // Gọi ngay lần đầu tiên
+
+    // Hàm lấy dữ liệu thời tiết
+    async function fetchWeather() {
+      const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Prague&appid=YOUR_API_KEY&lang=vi&units=metric');
+      const data = await response.json();
+      const weatherDiv = document.getElementById('weather');
+      if (data.main) {
+        weatherDiv.innerHTML = Nhiệt độ: ${data.main.temp}°C;
+      } else {
+        weatherDiv.innerHTML = 'Không thể lấy dữ liệu thời tiết.';
+      }
+    }
+
+    // Gọi hàm lấy dữ liệu thời tiết
+    fetchWeather();
+  </script>
+
+</body>
+</html>
   </script>
 
 </body>
