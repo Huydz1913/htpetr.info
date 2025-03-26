@@ -179,4 +179,62 @@
 
   setInterval(createSnowflake, 100);
 </script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Trail Effect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    .cursor {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ff00ff;
+      pointer-events: none;
+      animation: cursorTrail 0.2s ease-out infinite;
+    }
+
+    @keyframes cursorTrail {
+      0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nội dung của trang -->
+
+  <script>
+    // Đoạn mã JavaScript theo dõi chuột
+    document.addEventListener('mousemove', function(e) {
+      var cursor = document.createElement('div');
+      cursor.classList.add('cursor');
+      document.body.appendChild(cursor);
+
+      cursor.style.left = ${e.pageX - 10}px;
+      cursor.style.top = ${e.pageY - 10}px;
+
+      setTimeout(() => {
+        cursor.remove();
+      }, 200);
+    });
+  </script>
+</body>
+</html>
 </html>
