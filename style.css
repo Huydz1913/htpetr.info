@@ -423,3 +423,33 @@ a
     text-decoration: none;
     color: inherit; 
 } 
+@keyframes snowfall {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.snowflake {
+    position: fixed;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    animation: snowfall linear infinite;
+}
+
+/* Hiệu ứng 7 sắc cầu vồng */
+@keyframes rainbow {
+    0% { background: red; }
+    14% { background: orange; }
+    28% { background: yellow; }
+    42% { background: green; }
+    57% { background: blue; }
+    71% { background: indigo; }
+    85% { background: violet; }
+    100% { background: red; }
+}
+
+.snowflake {
+    animation: snowfall linear infinite, rainbow 1s infinite alternate;
+}
