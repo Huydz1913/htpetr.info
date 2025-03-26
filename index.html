@@ -161,4 +161,22 @@
         </div>
         <script src="./script.js"></script>
     </body>
+    <script>
+  function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      document.body.appendChild(snowflake);
+
+      // Tạo vị trí ngẫu nhiên
+      snowflake.style.left = Math.random() * 100 + "vw";
+      snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+      // Xóa sau khi rơi xong
+      setTimeout(() => {
+          snowflake.remove();
+      }, 5000);
+  }
+
+  setInterval(createSnowflake, 100);
+</script>
 </html>
