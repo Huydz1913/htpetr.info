@@ -539,5 +539,5 @@ body {
 }
 
 .glowing {
-  background-color: #ff00ff;
+  background-color: #ff00ff;  /* Màu nền khi phát sáng */
 }
