@@ -501,4 +501,31 @@ a
     letter-spacing: 2px;
     transform-style: preserve-3d;
 }
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
 
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff00ff;
+  pointer-events: none;
+  animation: cursorTrail 0.2s ease-out infinite;
+}
+
+@keyframes cursorTrail {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
