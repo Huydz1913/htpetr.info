@@ -479,5 +479,26 @@ a
     transform-style: preserve-3d;
     text-align: center;
 }
+@keyframes fireEffect {
+    0% { text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 20px yellow, 0 0 30px yellow, 0 0 50px orange; }
+    50% { text-shadow: 0 0 15px red, 0 0 30px orange, 0 0 40px yellow, 0 0 60px red; }
+    100% { text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow, 0 0 50px orange; }
+}
 
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 50px #ff0080, 0 0 75px #ff0080; }
+    50% { text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 50px #ff0080, 0 0 75px #ff0080, 0 0 100px #ff0080; }
+    100% { text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 50px #ff0080, 0 0 75px #ff0080; }
+}
+
+.fire-text {
+    font-size: 60px; 
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    animation: fireEffect 1s infinite alternate, neonGlow 1.5s ease-in-out infinite alternate;
+    display: inline-block;
+    letter-spacing: 2px;
+    transform-style: preserve-3d;
+}
 
