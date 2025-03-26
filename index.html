@@ -235,18 +235,22 @@
       }, 200);
     });
   </script>
-    body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-color: #000;
-  overflow: hidden;
-  transition: background-color 0.1s ease-in-out;
-}
+    const audio = document.getElementById('myAudio');  // Lấy phần tử âm thanh
+const body = document.body;  // Lấy phần thân trang
 
-.glowing {
-  background-color: #ff00ff;  /* Màu nền khi phát sáng */
-}
+audio.addEventListener('play', function() {
+  setInterval(function() {
+    const volume = audio.volume;  // Lấy mức độ âm thanh
+    if (audio.paused || audio.currentTime === 0) return;
+
+    // Nếu âm lượng lớn hơn một ngưỡng, bật hiệu ứng sáng cầu vồng
+    if (volume > 0.5) {
+      body.classList.add('glowing');  // Thêm class để bật hiệu ứng nhấp nháy
+    } else {
+      body.classList.remove('glowing');  // Xóa class khi âm lượng thấp
+    }
+  }, 100);
+});
 </body>
 </html>
 </html>
