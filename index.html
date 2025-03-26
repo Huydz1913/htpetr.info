@@ -251,6 +251,66 @@ audio.addEventListener('play', function() {
     }
   }, 100);
 });
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Glowing Background</title>
+  <style>
+    @keyframes rainbow {
+      0% { background-color: red; }
+      14% { background-color: orange; }
+      28% { background-color: yellow; }
+      42% { background-color: green; }
+      57% { background-color: blue; }
+      71% { background-color: indigo; }
+      85% { background-color: violet; }
+      100% { background-color: red; }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #000;
+      overflow: hidden;
+      transition: background-color 0.1s ease-in-out;
+    }
+
+    .glowing {
+      animation: rainbow 1s infinite;  /* Nhấp nháy với hiệu ứng cầu vồng */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Phần tử phát nhạc -->
+  <audio id="myAudio" controls>
+    <source src="path-to-your-audio-file.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('myAudio');
+    const body = document.body;
+
+    audio.addEventListener('play', function() {
+      setInterval(function() {
+        const volume = audio.volume;
+        if (audio.paused || audio.currentTime === 0) return;
+
+        if (volume > 0.5) {
+          body.classList.add('glowing');
+        } else {
+          body.classList.remove('glowing');
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
 </body>
 </html>
 </html>
