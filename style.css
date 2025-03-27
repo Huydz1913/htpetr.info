@@ -144,7 +144,7 @@ html {
 }
 
 .footer__item span {
-    font-size: 0.8rem;
+    font-size: 1.8rem;
     color: var(--text-color);
     transition: all .3s ease;
 }
@@ -211,7 +211,10 @@ html {
     background-color: #ff00ff;
     pointer-events: none;
     animation: cursorTrail 0.2s ease-out infinite;
-
+    .contact-info {
+    font-size: 14px; /* Điều chỉnh kích thước chữ */
+    font-family: Arial, sans-serif; /* Chọn font chữ thích hợp */
+    }
 }
 
 @keyframes rainbow {
