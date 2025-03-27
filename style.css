@@ -588,3 +588,17 @@ body {
 .phone-info {
   width: 50%;             /* Chiếm 50% chiều rộng bảng */
 }
+@keyframes rainbow {
+  0% { color: #FF0000; }    /* Đỏ */
+  14% { color: #FF7F00; }   /* Cam */
+  28% { color: #FFFF00; }   /* Vàng */
+  42% { color: #00FF00; }   /* Lục */
+  57% { color: #0000FF; }   /* Lam */
+  71% { color: #4B0082; }   /* Chàm */
+  85% { color: #8B00FF; }   /* Tím */
+  100% { color: #FF0000; }  /* Quay lại Đỏ */
+}
+
+.rainbow-text {
+  animation: rainbow 3s infinite;
+}
