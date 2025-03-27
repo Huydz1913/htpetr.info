@@ -211,10 +211,6 @@ html {
     background-color: #ff00ff;
     pointer-events: none;
     animation: cursorTrail 0.2s ease-out infinite;
-    .contact-info {
-    font-size: 14px; /* Điều chỉnh kích thước chữ */
-    font-family: Arial, sans-serif; /* Chọn font chữ thích hợp */
-    }
 }
 
 @keyframes rainbow {
@@ -226,9 +222,4 @@ html {
     71% { background-color: indigo; }
     85% { background-color: violet; }
     100% { background-color: red; }
-    }
-.avatar {
-    width: 150px; /* Điều chỉnh chiều rộng ảnh */
-    height: 150px; /* Điều chỉnh chiều cao ảnh */
-    object-fit: cover; /* Giữ tỷ lệ và cắt ảnh nếu cần */
 }
