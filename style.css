@@ -227,3 +227,8 @@ html {
     85% { background-color: violet; }
     100% { background-color: red; }
     }
+.avatar {
+    width: 150px; /* Điều chỉnh chiều rộng ảnh */
+    height: 150px; /* Điều chỉnh chiều cao ảnh */
+    object-fit: cover; /* Giữ tỷ lệ và cắt ảnh nếu cần */
+}
