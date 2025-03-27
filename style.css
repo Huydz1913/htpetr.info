@@ -566,3 +566,23 @@ body {
   font-size: 18px;
   padding: 15px;
 }
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .box {
+            width: auto; /* Cho phép mở rộng theo nội dung */
+            max-width: 90%; /* Giới hạn tối đa để không tràn ra ngoài */
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            overflow: auto; /* Tạo thanh cuộn nếu nội dung quá dài */
+            max-height: 80vh; /* Giữ bảng không quá cao */
+        }
+    </style>
+</head>
