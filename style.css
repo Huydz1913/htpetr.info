@@ -570,3 +570,21 @@ body {
     .box {
     display: inline-block;
     }
+.info-table {
+  width: 100%;            /* Mở rộng bảng đầy đủ chiều rộng */
+  table-layout: fixed;    /* Đảm bảo bảng không bị lệch và cột có kích thước cố định */
+  border-collapse: collapse; /* Xóa khoảng cách giữa các cell */
+}
+
+.info-table td {
+  padding: 10px;          /* Thêm khoảng cách cho các cell */
+  text-align: center;     /* Căn giữa nội dung */
+}
+
+.like-share {
+  width: 50%;             /* Chiếm 50% chiều rộng bảng */
+}
+
+.phone-info {
+  width: 50%;             /* Chiếm 50% chiều rộng bảng */
+}
