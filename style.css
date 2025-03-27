@@ -211,10 +211,7 @@ html {
     background-color: #ff00ff;
     pointer-events: none;
     animation: cursorTrail 0.2s ease-out infinite;
-    .contact-info {
-    font-size: 14px; /* Điều chỉnh kích thước chữ */
-    font-family: Arial, sans-serif; /* Chọn font chữ thích hợp */
-    }
+
 }
 
 @keyframes rainbow {
