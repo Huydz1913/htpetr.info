@@ -577,3 +577,6 @@ body {
     object-fit: cover;
     margin-top: 15px;
 }
+.snowflake {
+    display: none !important;
+}
